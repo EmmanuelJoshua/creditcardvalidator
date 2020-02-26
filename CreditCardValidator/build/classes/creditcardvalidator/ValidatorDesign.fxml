@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="692.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="creditcardvalidator.ValidatorDesignController">
+   <children>
+      <ImageView fitHeight="404.0" fitWidth="692.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/sunset-1600x900-minimal-dark-cgi-hd-4k-12329.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="appName" fill="WHITE" layoutX="21.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Card Validator">
+         <font>
+            <Font name="Samsung Sans Regular" size="26.0" />
+         </font>
+      </Text>
+      <Pane fx:id="inputPane" layoutX="361.0" layoutY="15.0" prefHeight="375.0" prefWidth="317.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 15;">
+         <children>
+            <JFXTextField fx:id="cardNumber" focusColor="#585858" labelFloat="true" layoutX="18.0" layoutY="41.0" prefHeight="30.0" prefWidth="281.0" promptText="Card Number" style="-fx-text-fill: #585858; -fx-prompt-text-fill: #8A8A8A;" unFocusColor="#d9d9d9">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="cardHolder" focusColor="#585858" labelFloat="true" layoutX="18.0" layoutY="125.0" prefHeight="30.0" prefWidth="281.0" promptText="Card Holder" style="-fx-text-fill: #585858; -fx-prompt-text-fill: #8A8A8A;" unFocusColor="#d9d9d9">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="cardCVC" focusColor="#585858" labelFloat="true" layoutX="16.0" layoutY="202.0" prefHeight="30.0" prefWidth="124.0" promptText="CVC" style="-fx-text-fill: #585858; -fx-prompt-text-fill: #8A8A8A;" unFocusColor="#d9d9d9">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="cardExpiry" focusColor="#585858" labelFloat="true" layoutX="177.0" layoutY="202.0" prefHeight="30.0" prefWidth="124.0" promptText="Expires" style="-fx-text-fill: #585858; -fx-prompt-text-fill: #8A8A8A;" unFocusColor="#d9d9d9">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton contentDisplay="RIGHT" graphicTextGap="2.0" layoutX="110.0" layoutY="273.0" onAction="#validateCard" prefHeight="34.0" prefWidth="113.0" style="-fx-background-color: #1B4E59;" text="Validate" textFill="WHITE">
+               <font>
+                  <Font name="Samsung Sans Regular" size="16.0" />
+               </font>
+               <graphic>
+                  <MaterialDesignIconView fill="WHITE" glyphName="CHECKBOX_MARKED_CIRCLE_OUTLINE" size="18" />
+               </graphic>
+            </JFXButton>
+            <Text fx:id="cardStatus" fill="RED" layoutX="56.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Samsung Sans Regular" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane fx:id="displayPane" layoutX="132.0" layoutY="15.0" prefHeight="375.0" prefWidth="428.0" style="-fx-background-color: #EEEEEE; -fx-background-radius: 15;" visible="false">
+         <children>
+            <Text fill="#585858" layoutX="18.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Number :-" y="41.0">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#585858" layoutX="17.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Holder :-">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#585858" layoutX="18.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVV :-">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text fill="#585858" layoutX="256.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiry Date :-">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <MaterialDesignIconView fill="#1b4e59" glyphName="CHECKBOX_MARKED_CIRCLE_OUTLINE" layoutX="139.0" layoutY="145.0" size="150" />
+            <Separator layoutX="18.0" layoutY="252.0" prefHeight="0.0" prefWidth="394.0" />
+            <Separator layoutX="18.0" layoutY="302.0" prefHeight="3.0" prefWidth="394.0" />
+            <Separator layoutX="18.0" layoutY="349.0" prefHeight="3.0" prefWidth="394.0" />
+            <Text fill="#1b4e59" layoutX="128.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Credit Card Valid!">
+               <font>
+                  <Font name="Samsung Sans Regular" size="22.0" />
+               </font>
+            </Text>
+            <Text fx:id="displayNumber" fill="#585858" layoutX="134.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" y="41.0">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="displayHolder" fill="#585858" layoutX="127.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="displayDate" fill="#585858" layoutX="363.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="displayCVV" fill="#585858" layoutX="70.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font name="Samsung Sans Regular" size="15.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
